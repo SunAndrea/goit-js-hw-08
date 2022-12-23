@@ -10,8 +10,8 @@ const fillingDataFromLs = form => {
   entries.map(([key, value]) => {
     formEl.elements[key].value = value;
   });
-  console.log(savedData);
 };
+
 function onFormFillInfo({ target }) {
   localStorage.setItem(
     FEEDBACK_LS_KEY,
@@ -22,11 +22,13 @@ function onFormFillInfo({ target }) {
   );
   const savedData = JSON.parse(localStorage.getItem(FEEDBACK_LS_KEY)) || {};
 }
+
 function onFormSubmit(evt) {
   evt.preventDefault();
   evt.target.reset();
   localStorage.removeItem(FEEDBACK_LS_KEY);
 }
+
 formEl.addEventListener(`input`, throttle(onFormFillInfo, 500));
 formEl.addEventListener(`submit`, onFormSubmit);
 fillingDataFromLs(formEl);
