@@ -27,6 +27,6 @@ function onFormSubmit(evt) {
   evt.target.reset();
   localStorage.removeItem(FEEDBACK_LS_KEY);
 }
-formEl.addEventListener(`input`, throttle(onFormFillInfo, 5000));
+formEl.addEventListener(`input`, throttle(onFormFillInfo, 500));
 formEl.addEventListener(`submit`, onFormSubmit);
 fillingDataFromLs(formEl);
