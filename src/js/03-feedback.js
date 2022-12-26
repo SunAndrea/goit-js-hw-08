@@ -26,6 +26,7 @@ function onFormFillInfo({ target }) {
 function onFormSubmit(evt) {
   evt.preventDefault();
   evt.target.reset();
+  console.log(JSON.parse(localStorage.getItem(FEEDBACK_LS_KEY)));
   localStorage.removeItem(FEEDBACK_LS_KEY);
 }
 
